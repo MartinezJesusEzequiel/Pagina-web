@@ -1,102 +1,173 @@
-/* Reset básico */
-* {
-    margin: 0;
+/* General */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin:0;
     padding: 0;
     box-sizing: border-box;
+    color: #090909;
+    background-color: #f9f9f9;
 }
 
-body {
-    font-family: 'Segoe UI', sans-serif;
-    line-height: 1.6;
-    color: #333;
-}
-
-  /* Header y navegación */
+/* Header */
 header {
-    background: linear-gradient(#111, #333);
-    color: white;
-    padding: 2rem 1rem;
+    background: linear-gradient(to right, #223843, #13678A);
+    color: rgb(255, 255, 255);
     text-align: center;
-    position: relative;
+    padding: 50px 20px;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 1rem;
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
 }
 
-nav a {
-    color: white;
+header p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+header .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: white;
+    color: #4facfe;
     text-decoration: none;
+    border-radius: 5px;
     font-weight: bold;
 }
 
-.hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+/*habilidades*/
+#habilidadaes {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
 }
 
-.hero .btn {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.7rem 1.2rem;
-    background-color: #00bcd4;
-    color: white;
-    border: none;
+.habilidades-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.habilidad{
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 250px;
+    text-align: lefts;
+}
+
+
+
+.habilidad i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    padding: 15px;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    margin: 0 auto 10px auto;
+    transition: transform 0.3s ease; /* Suaviza la animación */
+}
+
+.habilidad i:hover {
+    transform: translateY(-10px);
+    color: #ff5722; /* Cambia el color del ícono */
+}
+
+/* Colores específicos para cada tecnología */
+.habilidad.html i {
+    color: #f9f9f9; /* Color de HTML */
+    background-color: #e34c26;
+}
+
+.habilidad.css i {
+    background-color: #2965f1;
+    color: #f9f9f9; /* Color de CSS */
+}
+
+.habilidad.js i {
+    background-color: #f7df1e; /* Color de JavaScript */
+    color: #090909;
+}
+
+.habilidad.react i {
+    background-color: #61dafb; /* Color de React */
+    color: #090909;
+}
+.habilidad.python i {
+    background-color: #3776AB; /* Fondo azul de Python */
+    color: white; /* Ícono blanco */
+}
+
+.habilidad.pandas i {
+    background-color: #150458; /* Fondo oscuro de Pandas */
+    color: white; /* Ícono blanco */
+}
+
+/* Navegación */
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
     text-decoration: none;
-    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 
-  /* Secciones */
+/* Secciones */
 section {
-    padding: 4rem 2rem;
-    max-width: 900px;
-    margin: 0 auto;
+    padding: 50px 20px;
+    text-align: center;
 }
 
 #proyectos .proyectos-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 1.5rem;
+    justify-content: center;
+    gap: 20px;
 }
 
 .proyecto {
-    flex: 1 1 45%;
-    border: 1px solid #ddd;
-    padding: 1rem;
-    border-radius: 8px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: left;
 }
 
-  /* Formulario */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-input, textarea {
-    padding: 0.8rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.proyecto img {
     width: 100%;
+    border-radius: 10px;
 }
 
-button {
-    padding: 0.8rem;
-    background-color: #00bcd4;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+.proyecto h3 {
+    margin: 10px 0;
 }
 
-  /* Footer */
+/* Footer */
 footer {
-    background-color: #f4f4f4;
+    background-color: #333;
+    color: white;
     text-align: center;
-    padding: 1rem;
-    font-size: 0.9rem;
+    padding: 20px;
 }
