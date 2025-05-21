@@ -9,10 +9,12 @@
 </head>
 <body>
     <!-- Header -->
-    <header id="inicio">
+    <header id="inicio" style="position:relative;">
+        <button id="darkModeToggle" class="btn" style="position:absolute;top:20px;right:20px;z-index:9999;">🌙</button>
         <div class="hero">
+            <img src="Imagen de WhatsApp 2025-04-16 a las 10.39.10_3ef6e64b.jpg" alt="Foto de Ezequiel Martinez" class="foto-perfil">
             <h1>Hola, soy Ezequiel Martinez</h1>
-            <p>Desarrollador de software.</p>
+            <p>Construyo soluciones web modernas y eficientes con React y Python.</p>
             <a href="#proyectos" class="btn">Ver Proyectos</a>
         </div>
         <nav>
@@ -29,17 +31,23 @@
     <main>
         <section id="sobre-mi">
             <h2>Sobre mí</h2>
-            <p>Soy un desarrollador web apasionado por crear sitios modernos y funcionales.</p>
+            <p>
+                Soy una persona curiosa y creativa, siempre con ganas de aprender algo nuevo. Disfruto el proceso de pensar ideas y convertirlas en soluciones útiles para los demás.<br>
+                Me gusta enfrentar desafíos, trabajar de manera autodidacta y colaborar con otras personas para crecer juntos. Busco superarme día a día y aportar valor en cada proyecto en el que participo.
+            </p>
         </section>
 
         <!-- Habilidades -->
-        <section id="habilidades ">
-            <h2>Habilidades de desarrollador</h2>
+        <section id="habilidades">
+            <h2>Tecnologías de desarrollo</h2>
             <div class="habilidades-container">
                 <div class="habilidad html">
                     <i class="fas fa-code"></i>
                     <h3>HTML</h3>
                     <p>Experto en la creación de estructuras web semánticas.</p>
+                    <pre class="codigo-html">
+
+                    </pre>
                 </div>
                 <div class="habilidad css">
                     <i class="fab fa-css3-alt"></i>
@@ -68,6 +76,7 @@
                 </div>
             </div>
         </section>
+
         <!-- Proyectos -->
         <section id="proyectos">
             <h2>Proyectos</h2>
@@ -98,9 +107,16 @@
     <!-- Footer -->
     <footer>
         <p>© 2025 Ezequiel Martinez</p>
+        <p>
+            <a href="mailto:ezequieljemartinez@gmail.com" style="color:#fff;text-decoration:underline;">ezequieljemartinez@gmail.com</a>
+        </p>
         <div class="social">
-            <a href="https://github.com/usuario" target="_blank">GitHub</a>
-            <a href="https://linkedin.com/in/usuario" target="_blank">LinkedIn</a>
+            <a href="https://github.com/MartinezJesusEzequiel" target="_blank" title="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/ezequiel-martinez-a03088327/" target="_blank" title="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+            </a>
         </div>
     </footer>
 
