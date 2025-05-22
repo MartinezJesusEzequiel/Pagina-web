@@ -286,51 +286,45 @@ section h2 {
 .certificado { align-items: center; text-align: center; }
 
 /* Formulario de contacto */
+/* Mejora visual para el formulario de contacto */
 form {
-    max-width: 400px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    background: var(--glass-bg);
-    padding: 30px 20px;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1.5px solid var(--glass-border);
+    background: rgba(60,35,187,0.18);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px 0 rgba(42,5,230,0.12);
+    padding: 40px 28px;
+    border: 2px solid var(--accent);
+    max-width: 420px;
+    margin: 0 auto 40px auto;
+    transition: box-shadow 0.3s;
 }
 form input, form textarea {
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    padding: 10px;
-    font-size: 1rem;
-    resize: vertical;
-    background: rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.13);
+    border: 1.5px solid var(--primary);
     color: var(--text-light);
+    font-size: 1.08rem;
+    margin-bottom: 12px;
+    padding: 12px 14px;
+    border-radius: 8px;
     transition: border 0.2s, box-shadow 0.2s;
 }
 form input:focus, form textarea:focus {
-    outline: none;
-    border-color: var(--primary);
-    box-shadow: 0 0 0 2px #4facfe33;
-    background: rgba(255,255,255,0.15);
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px var(--accent);
+    background: rgba(255,255,255,0.18);
 }
 form button.btn-principal {
-    margin-top: 10px;
-    background: var(--primary);
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    padding: 12px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.2s;
+    width: 100%;
+    margin-top: 18px;
+    padding: 14px 0;
+    font-size: 1.15rem;
+    border-radius: 10px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    box-shadow: 0 2px 12px var(--accent);
 }
 form button.btn-principal:hover {
-    background: var(--accent);
-    transform: scale(1.05);
+    background: linear-gradient(90deg, var(--accent), var(--primary));
+    box-shadow: 0 4px 24px var(--primary);
+
 }
 
 /* Footer: estilos para el pie de página */
@@ -452,3 +446,28 @@ body.dark-mode .social a {
     transform: scale(1.07) rotate(-2deg);
 }
 
+/* Efecto hover en los botones: sombra en modo claro */
+.btn-principal:hover, .btn-circular:hover, .btn:hover {
+    transform: scale(1.07);
+    background: var(--accent);
+    color: #fff;
+    /* Sombra con varios tonos para más profundidad */
+    box-shadow:
+        0 4px 16px 0 var(--accent),
+        0 2px 24px 0 rgba(42,5,230,0.18),
+        0 0 0 4px rgba(60,35,187,0.10);
+}
+
+/* Efecto hover en los botones: sombra en modo oscuro */
+body.dark-mode .btn-principal:hover,
+body.dark-mode .btn-circular:hover,
+body.dark-mode .btn:hover {
+    transform: scale(1.07);
+    background: var(--primary) !important;
+    color: #fff !important;
+    /* Sombra con varios tonos para más profundidad en dark */
+    box-shadow:
+        0 4px 24px 0 var(--primary),
+        0 2px 32px 0 rgba(60,35,187,0.30),
+        0 0 0 6px rgba(44,41,60,0.18) !important;
+}
