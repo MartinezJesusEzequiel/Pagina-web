@@ -11,18 +11,22 @@
     <!-- Header -->
     <header id="inicio" style="position:relative;">
         <button id="darkModeToggle" class="btn" style="position:absolute;top:20px;right:20px;z-index:9999;">🌙</button>
+        <!-- Botón multilenguaje -->
+        <button id="langToggle" class="btn" style="position:absolute;top:20px;left:20px;z-index:9999;">EN</button>
+
         <div class="hero">
             <img src="Imagen de WhatsApp 2025-04-16 a las 10.39.10_3ef6e64b.jpg" alt="Foto de Ezequiel Martinez" class="foto-perfil">
-            <h1>Hola, soy Ezequiel Martinez</h1>
-            <p>Construyo soluciones web modernas y eficientes con React y Python.</p>
-            <a href="#proyectos" class="btn">Ver Proyectos</a>
+            <h1 id="titulo-principal">Hola, soy Ezequiel Martinez</h1>
+            <p id="subtitulo">Me apasiona crear software que resuelva problemas reales de forma simple y eficaz..</p>
+            <a href="#proyectos" class="btn" id="ver-proyectos-btn">Ver Proyectos</a>
         </div>
         <nav>
             <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#sobre-mi">Sobre mí</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#inicio" id="nav-inicio">Inicio</a></li>
+                <li><a href="#sobre-mi" id="nav-sobre-mi">Sobre mí</a></li>
+                <li><a href="#proyectos" id="nav-proyectos">Proyectos</a></li>
+                <li><a href="#certificados" id="nav-certificados">Certificados</a></li>
+                <li><a href="#contacto" id="nav-contacto">Contacto</a></li>
             </ul>
         </nav>
     </header>
@@ -30,8 +34,8 @@
     <!-- Sobre mí -->
     <main>
         <section id="sobre-mi">
-            <h2>Sobre mí</h2>
-            <p>
+            <h2 id="titulo-sobre-mi">Sobre mí</h2>
+            <p id="texto-sobre-mi">
                 Soy una persona curiosa y creativa, siempre con ganas de aprender algo nuevo. Disfruto el proceso de pensar ideas y convertirlas en soluciones útiles para los demás.<br>
                 Me gusta enfrentar desafíos, trabajar de manera autodidacta y colaborar con otras personas para crecer juntos. Busco superarme día a día y aportar valor en cada proyecto en el que participo.
             </p>
@@ -39,15 +43,12 @@
 
         <!-- Habilidades -->
         <section id="habilidades">
-            <h2>Tecnologías de desarrollo</h2>
+            <h2 id="titulo-habilidades">Tecnologías de desarrollo</h2>
             <div class="habilidades-container">
                 <div class="habilidad html">
                     <i class="fas fa-code"></i>
                     <h3>HTML</h3>
                     <p>Experto en la creación de estructuras web semánticas.</p>
-                    <pre class="codigo-html">
-
-                    </pre>
                 </div>
                 <div class="habilidad css">
                     <i class="fab fa-css3-alt"></i>
@@ -79,7 +80,7 @@
 
         <!-- Proyectos -->
         <section id="proyectos">
-            <h2>Proyectos</h2>
+            <h2 id="titulo-proyectos">Proyectos</h2>
             <div class="proyectos-container">
                 <div class="proyecto">
                     <h3>Proyecto 1</h3>
@@ -92,9 +93,40 @@
             </div>
         </section>
 
+        <!-- Certificados y logros -->
+<!-- Educación -->
+<section id="educacion">
+    <h2 id="titulo-educacion">Educación</h2>
+    <div class="certificados-container">
+        <div class="certificado">
+            <i class="fas fa-graduation-cap"></i>
+            <h3>ITEC Instituto Tecnológico "El Molino"</h3>
+            <p>Tecnicatura en Tecnología/Técnico de software informático</p>
+            <span style="color:var(--azul-claro);font-weight:bold;">mar. 2024 - 2026</span>
+        </div>
+        <div class="certificado">
+            <i class="fas fa-laptop-code"></i>
+            <h3>CEIT "Centro de estudios informáticos y tecnológicos"</h3>
+            <p>Programación y Desarrollador Web</p>
+            <span style="color:var(--azul-claro);font-weight:bold;">feb. 2023</span>
+        </div>
+        <div class="certificado">
+            <i class="fab fa-python"></i>
+            <h3>Codedex</h3>
+            <p>Legend en Python</p>
+            <span style="color:var(--cian);font-weight:bold;">Reconocimiento especial</span>
+        </div>
+        <div class="certificado">
+            <i class="fas fa-file-pdf"></i>
+            <h3>Martinez Ezequiel.pdf</h3>
+            <a href="Martinez Ezequiel.pdf" download class="btn" style="margin-top:10px;">Descargar PDF</a>
+        </div>
+    </div>
+</section>
+
         <!-- Contacto -->
         <section id="contacto">
-            <h2>Contacto</h2>
+            <h2 id="titulo-contacto">Contacto</h2>
             <form id="formulario">
                 <input type="text" placeholder="Tu nombre" required />
                 <input type="email" placeholder="Tu correo" required />
@@ -105,20 +137,24 @@
     </main>
 
     <!-- Footer -->
-    <footer>
-        <p>© 2025 Ezequiel Martinez</p>
-        <p>
-            <a href="mailto:ezequieljemartinez@gmail.com" style="color:#fff;text-decoration:underline;">ezequieljemartinez@gmail.com</a>
-        </p>
-        <div class="social">
-            <a href="https://github.com/MartinezJesusEzequiel" target="_blank" title="GitHub">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/ezequiel-martinez-a03088327/" target="_blank" title="LinkedIn">
-                <i class="fab fa-linkedin"></i>
-            </a>
-        </div>
-    </footer>
+<!-- Footer -->
+<footer>
+    <a href="CV_EzequielMartinez.pdf" download class="btn" style="margin: 15px auto 10px auto; display: inline-block;">
+        <i class="fas fa-file-download"></i> Descargar CV
+    </a>
+    <p>© 2025 Ezequiel Martinez</p>
+    <p>
+        <a href="mailto:ezequieljemartinez@gmail.com" style="color:#fff;text-decoration:underline;">ezequieljemartinez@gmail.com</a>
+    </p>
+    <div class="social">
+        <a href="https://github.com/MartinezJesusEzequiel" target="_blank" title="GitHub">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/ezequiel-martinez-a03088327/" target="_blank" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+        </a>
+    </div>
+</footer>
 
     <script src="script.js"></script>
 </body>

@@ -1,102 +1,68 @@
-/* Paleta de colores */
+/* Google Fonts: importa la fuente Quicksand desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
+
+/* Aplica la fuente Quicksand a todos los elementos principales del sitio */
+body,
+section h2,
+header h1,
+header p,
+nav ul li a,
+.titulo-principal,
+.titulo-seccion,
+.subtitulo,
+.texto-seccion,
+.habilidad h3, .proyecto h3, .certificado h3,
+.habilidad p, .proyecto p, .certificado p,
+form input, form textarea, form button,
+footer, footer a {
+    font-family: 'Quicksand', 'Montserrat', 'Times New Roman', sans-serif !important;
+}
+
+/* Paleta de colores: variables CSS para usar colores consistentes en todo el sitio */
 :root {
-    --primary: #2A05E6;
-    --accent: #3C23BB;
-    --bg-light: #29253E;
-    --bg-dark: #2C293C;
-    --card-light: #3D3566;
-    --card-dark: #433391;
-    --text-light: #f9f9f9;
-    --text-dark: #e0e0e0;
+    --primary: #2A05E6; /* Azul principal */
+    --accent: #3C23BB;  /* Azul acento */
+    --bg-light: #29253E; /* Fondo claro */
+    --bg-dark: #2C293C;  /* Fondo oscuro */
+    --card-light: #3D3566cc; /* Fondo de tarjeta claro */
+    --card-dark: #433391cc;   /* Fondo de tarjeta oscuro */
+    --glass-bg: rgba(60,35,187,0.22); /* Fondo glassmorphism */
+    --glass-border: rgba(255,255,255,0.13); /* Borde glassmorphism */
+    --text-light: #f9f9f9;   /* Texto claro */
+    --text-dark: #e0e0e0;    /* Texto oscuro */
+    --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18); /* Sombra normal */
+    --shadow-hover: 0 12px 32px 0 rgba(31, 38, 135, 0.28); /* Sombra hover */
 }
 
-/* General */
-/* Adaptabilidad móvil */
-@media (max-width: 900px) {
-    .habilidades-container,
-    #proyectos .proyectos-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-    .habilidad,
-    .proyecto {
-        width: 90%;
-        min-width: 220px;
-        max-width: 400px;
-    }
-    section {
-        padding: 40px 10px 30px 10px;
-    }
-    form {
-        padding: 20px 10px;
-    }
-    header {
-        padding: 30px 10px;
-    }
-    .foto-perfil {
-        width: 100px;
-        height: 100px;
-    }
-}
-
-/* Fondo general con el mismo degradé */
+/* Fondo degradado animado para el body */
 body {
-    font-family: 'Times New Roman', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     color: var(--text-light);
-    background: linear-gradient(135deg, #3C23BB 0%, #433391 60%, #3D3566 100%);
     min-height: 100vh;
+    background: linear-gradient(135deg, #3C23BB, #433391, #3D3566, #29253E);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
 }
 
-/* Header transparente para que se vea el degradé del body */
+/* Animación del fondo degradado */
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+/* Header: estilos generales del encabezado */
 header {
     background: transparent;
     color: var(--text-light);
     text-align: center;
-    padding: 50px 20px;
+    padding: 48px 20px 32px 20px;
+    position: relative;
 }
 
-section,
-.proyecto,
-form {
-    background: var(--card-light);
-    color: var(--text-light);
-}
-
-header h1 {
-    font-size: 2.5rem;
-    margin: 0;
-}
-
-header p {
-    font-size: 1.2rem;
-    margin: 10px 0;
-}
-
-/* Botón destacado */
-header .btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 28px;
-    background-color: var(--primary);
-    color: #fff;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-    font-size: 1.1rem;
-    box-shadow: 0 2px 8px var(--accent);
-    transition: transform 0.2s, background 0.2s, color 0.2s;
-}
-header .btn:hover {
-    transform: scale(1.07);
-    background: var(--accent);
-    color: #fff;
-}
-
-.foto-perfil {
+/* Imagen de perfil en el header */
+header .avatar {
     width: 140px;
     height: 140px;
     object-fit: cover;
@@ -104,27 +70,141 @@ header .btn:hover {
     border: 4px solid var(--primary);
     margin: 20px auto 10px auto;
     display: block;
+    box-shadow: 0 4px 24px 0 rgba(60,35,187,0.25);
 }
 
-/* Secciones */
+/* Título principal del header */
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    font-family: 'Montserrat', 'Times New Roman', sans-serif;
+    letter-spacing: 1px;
+}
+
+/* Subtítulo del header */
+header p {
+    font-size: 1.2rem;
+    margin: 10px 0 0 0;
+    opacity: 0.92;
+}
+
+/* Botón principal del header */
+header .btn-principal {
+    margin-top: 24px;
+}
+
+/* Navegación: estilos para el menú */
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 28px 0 0;
+    gap: 18px;
+}
+
+/* Enlaces del menú de navegación */
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-family: 'Montserrat', 'Times New Roman', sans-serif;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+}
+
+/* Efecto hover/focus en los enlaces del menú */
+nav ul li a:hover,
+nav ul li a:focus {
+    background: var(--primary);
+    color: #fff;
+}
+
+/* Botones principales, circulares y genéricos */
+.btn-principal, .btn-circular, .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 28px;
+    background-color: var(--primary);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 8px var(--accent);
+    transition: transform 0.2s, background 0.2s, color 0.2s, box-shadow 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+/* Efecto hover en los botones */
+.btn-principal:hover, .btn-circular:hover, .btn:hover {
+    transform: scale(1.07);
+    background: var(--accent);
+    color: #fff;
+    box-shadow: 0 4px 16px var(--accent);
+}
+
+/* Botón circular: usado para acciones flotantes */
+.btn-circular {
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    font-size: 1.3rem;
+    margin: 0 10px;
+    background: var(--glass-bg);
+    color: var(--text-light);
+    position: absolute;
+    top: 24px;
+    z-index: 10;
+    box-shadow: 0 2px 8px var(--accent);
+}
+.btn-circular.derecha { right: 24px; }
+.btn-circular.izquierda { left: 24px; }
+
+/* Secciones y tarjetas con efecto glassmorphism */
+section,
+.proyecto,
+form,
+.habilidad,
+.certificado {
+    background: var(--glass-bg);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1.5px solid var(--glass-border);
+    color: var(--text-light);
+}
+
+/* Sección: padding y centrado */
 section {
     padding: 60px 20px 40px 20px;
     text-align: center;
+    margin: 30px auto;
+    max-width: 1100px;
 }
 
+/* Título de sección */
 section h2 {
     font-size: 2rem;
     margin-bottom: 28px;
     letter-spacing: 1px;
+    font-family: 'Montserrat', 'Times New Roman', sans-serif;
 }
 
-.habilidad h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-}
+/* Clases utilitarias para centrado y títulos */
+.centrado { text-align: center; }
+.titulo-principal { font-size: 2.5rem; margin: 0; }
+.titulo-seccion { font-size: 2rem; margin-bottom: 28px; letter-spacing: 1px; }
+.subtitulo { font-size: 1.2rem; margin: 10px 0; }
+.texto-seccion { font-size: 1.1rem; line-height: 1.7; margin-bottom: 0; }
 
-/* Habilidades */
-.habilidades-container {
+/* Flex containers para distribuir tarjetas y secciones */
+.contenedor-flex, .habilidades-container, .proyectos-container, .certificados-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -132,23 +212,39 @@ section h2 {
     margin-top: 30px;
 }
 
-/* Habilidad con el mismo degradé que el fondo */
-.habilidad {
-    background: linear-gradient(135deg, #3C23BB 0%, #433391 60%, #3D3566 100%);
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 250px;
-    text-align: left;
-    transition: transform 0.3s, box-shadow 0.3s;
-    color: var(--text-light);
+/* Tarjetas de habilidades, proyectos, certificados */
+.habilidad, .proyecto, .certificado {
+    width: 300px;
+    min-width: 220px;
+    max-width: 350px;
+    padding: 28px 18px 22px 18px;
+    margin: 0 8px 24px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.35s cubic-bezier(.23,1.02,.32,1), box-shadow 0.3s, background 0.3s;
+    cursor: pointer;
+    background: var(--glass-bg);
 }
-.habilidad:hover {
-    transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+.habilidad:hover, .proyecto:hover, .certificado:hover {
+    transform: scale(1.07) translateY(-8px);
+    background: linear-gradient(135deg, #433391cc 0%, #2A05E6cc 100%);
+    box-shadow: var(--shadow-hover);
+    z-index: 2;
+}
+.habilidad h3, .proyecto h3, .certificado h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.habilidad p, .proyecto p, .certificado p {
+    font-size: 1rem;
+    opacity: 0.93;
+    margin: 0;
 }
 
-.habilidad i {
+/* Iconos grandes y visuales para tarjetas */
+.icono, .habilidad i, .certificado i {
     font-size: 2rem;
     margin-bottom: 10px;
     display: flex;
@@ -161,93 +257,33 @@ section h2 {
     height: 60px;
     text-align: center;
     margin: 0 auto 10px auto;
-    transition: transform 0.3s ease, color 0.3s;
+    transition: transform 0.3s, color 0.3s, background 0.3s;
 }
-.habilidad i:hover {
-    transform: translateY(-10px);
+.icono:hover, .habilidad i:hover, .certificado i:hover {
+    transform: translateY(-10px) scale(1.1);
     color: #ff5722;
+    background: #fff2;
 }
 
 /* Colores específicos para cada tecnología */
-.habilidad.html i {
-    color: #f9f9f9;
-    background-color: #e34c26;
-}
-.habilidad.css i {
-    background-color: #2965f1;
-    color: #f9f9f9;
-}
-.habilidad.js i {
-    background-color: #f7df1e;
-    color: #090909;
-}
-.habilidad.react i {
-    background-color: #61dafb;
-    color: #090909;
-}
-.habilidad.python i {
-    background-color: #3776AB;
-    color: white;
-}
-.habilidad.pandas i {
-    background-color: #150458;
-    color: white;
-}
+.habilidad.html i { color: #f9f9f9; background-color: #e34c26; }
+.habilidad.css i { background-color: #2965f1; color: #f9f9f9; }
+.habilidad.js i { background-color: #f7df1e; color: #090909; }
+.habilidad.react i { background-color: #61dafb; color: #090909; }
+.habilidad.python i { background-color: #3776AB; color: white; }
+.habilidad.pandas i { background-color: #150458; color: white; }
 
-/* Navegación */
-nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 0;
-    margin: 20px 0 0;
-}
-nav ul li {
-    margin: 0 15px;
-}
-nav ul li a {
-    text-decoration: none;
-    color: var(--text-light);
-    font-weight: bold;
-    letter-spacing: 2px;
-}
+/* Proyectos: estilos para la sección de proyectos */
+#proyectos .proyectos-container { gap: 20px; margin-top: 30px; }
+.proyecto { text-align: left; }
+.proyecto:hover { box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+.proyecto img { width: 100%; border-radius: 10px; }
+.proyecto ul { padding-left: 18px; margin: 10px 0; font-size: 0.97rem; }
+.proyecto ul li { margin-bottom: 4px; }
 
-/* Proyectos */
-#proyectos .proyectos-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 30px;
-}
-.proyecto {
-    background: var(--card-light);
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 300px;
-    text-align: left;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-.proyecto:hover {
-    transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-.proyecto img {
-    width: 100%;
-    border-radius: 10px;
-}
-.proyecto h3 {
-    margin: 10px 0;
-}
-.proyecto ul {
-    padding-left: 18px;
-    margin: 10px 0;
-    font-size: 0.97rem;
-}
-.proyecto ul li {
-    margin-bottom: 4px;
-}
+/* Certificados: estilos para la sección de certificados */
+.certificados-container { gap: 20px; }
+.certificado { align-items: center; text-align: center; }
 
 /* Formulario de contacto */
 form {
@@ -256,54 +292,57 @@ form {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    background: var(--card-light);
+    background: var(--glass-bg);
     padding: 30px 20px;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1.5px solid var(--glass-border);
 }
-form label {
-    text-align: left;
-    font-weight: 600;
-    margin-bottom: 5px;
-}
-form input,
-form textarea {
+form input, form textarea {
     border: 1px solid #ccc;
     border-radius: 6px;
     padding: 10px;
     font-size: 1rem;
     resize: vertical;
+    background: rgba(255,255,255,0.08);
+    color: var(--text-light);
+    transition: border 0.2s, box-shadow 0.2s;
 }
-form input:focus,
-form textarea:focus {
+form input:focus, form textarea:focus {
     outline: none;
     border-color: var(--primary);
     box-shadow: 0 0 0 2px #4facfe33;
+    background: rgba(255,255,255,0.15);
 }
-form button.btn {
+form button.btn-principal {
     margin-top: 10px;
     background: var(--primary);
     color: #fff;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     padding: 12px;
     font-size: 1.1rem;
     font-weight: bold;
     cursor: pointer;
     transition: background 0.2s, transform 0.2s;
 }
-form button.btn:hover {
+form button.btn-principal:hover {
     background: var(--accent);
     transform: scale(1.05);
 }
 
-/* Footer mejorado */
+/* Footer: estilos para el pie de página */
 footer {
     background-color: var(--bg-dark);
     color: var(--text-light);
     text-align: center;
     padding: 28px 10px 18px 10px;
     font-size: 1rem;
+    border-radius: 16px 16px 0 0;
+    margin-top: 40px;
+    box-shadow: 0 -2px 16px 0 rgba(31, 38, 135, 0.18);
 }
 footer .social {
     margin-top: 10px;
@@ -326,36 +365,65 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Modo oscuro con el mismo degradé */
+/* Responsive: adapta el diseño a pantallas pequeñas */
+@media (max-width: 900px) {
+    .contenedor-flex, .habilidades-container, .proyectos-container, .certificados-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .tarjeta-grande {
+        padding: 40px 10px 30px 10px;
+    }
+    .habilidad, .proyecto, .certificado {
+        width: 95%;
+        min-width: 180px;
+        max-width: 98vw;
+    }
+    section {
+        padding: 32px 4vw 24px 4vw;
+    }
+    form {
+        padding: 18px 4vw;
+    }
+    header {
+        padding: 24px 4vw 18px 4vw;
+    }
+    .avatar {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Modo oscuro: cambia colores para modo dark */
 body.dark-mode {
-    background: linear-gradient(135deg, #433391 0%, #2C293C 100%) !important;
+    background: linear-gradient(135deg, #433391 0%, #2C293C 100%);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
     color: var(--text-dark) !important;
 }
-body.dark-mode header {
-    background: transparent !important;
-    color: var(--text-dark) !important;
-}
+body.dark-mode header { background: transparent !important; color: var(--text-dark) !important; }
 body.dark-mode section,
 body.dark-mode .proyecto,
-body.dark-mode form {
-    background: var(--card-dark) !important;
+body.dark-mode form,
+body.dark-mode .habilidad,
+body.dark-mode .certificado {
+    background: rgba(67,51,145,0.22) !important;
     color: var(--text-dark) !important;
-}
-body.dark-mode .habilidad {
-    background: linear-gradient(135deg, #433391 0%, #2C293C 100%) !important;
-    color: var(--text-dark) !important;
+    border: 1.5px solid rgba(255,255,255,0.10) !important;
 }
 body.dark-mode .habilidad,
-body.dark-mode .proyecto {
+body.dark-mode .proyecto,
+body.dark-mode .certificado {
     box-shadow: 0 4px 12px rgba(0,0,0,0.3) !important;
 }
-body.dark-mode header .btn,
-body.dark-mode form button.btn {
+body.dark-mode header .btn-principal,
+body.dark-mode form button.btn-principal {
     background: var(--accent) !important;
     color: #fff !important;
 }
-body.dark-mode header .btn:hover,
-body.dark-mode form button.btn:hover {
+body.dark-mode header .btn-principal:hover,
+body.dark-mode form button.btn-principal:hover {
     background: var(--primary) !important;
     color: #fff !important;
 }
@@ -366,3 +434,21 @@ body.dark-mode footer {
 body.dark-mode .social a {
     color: #fff !important;
 }
+
+/* Foto de perfil: estilos para la imagen principal */
+.foto-perfil {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #3c23bb;
+    margin: 20px auto 10px auto;
+    display: block;
+    box-shadow: 0 4px 24px 0 rgba(60,35,187,0.35), 0 2px 8px rgba(0,0,0,0.18);
+    background: #fff;
+    transition: transform 0.3s;
+}
+.foto-perfil:hover {
+    transform: scale(1.07) rotate(-2deg);
+}
+
